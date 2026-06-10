@@ -1,0 +1,133 @@
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+
+                <a routerLink="/company" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                </a>
+
+
+                <li class="dropdown">
+                    <a routerLink="/company/AddJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-briefcase"></span><span class="mtext">Add Job</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/company/ViewJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-rows"></span><span class="mtext">View Job</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/company/Application" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">Application</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="/company/CoProfile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/ViewJobseeker" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-users"></span><span class="mtext">View JobSeekers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/CoFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a class="dropdown-toggle no-arrow" (click)="remove()" style="color: white;">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="ftco-search" style="padding: 0px 10px 0px 20px;">
+    <div class="row">
+        <div class="col-md-12 nav-link-wrap" style="margin-left: 261px;margin-top: 40px;">
+            <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="border-bottom: 12px gainsboro solid;;">
+                <button (click)="shownewAppPending()" class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">New Application</button>
+
+                <button (click)="shownewAppAcc()" class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Approved Application</button>
+
+                <button (click)="shownewAppRej()" class="nav-link" style="margin-left: 4px;" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Rejected Application</button>
+            </div>
+        </div>
+
+        <table>
+            <tr *ngFor="let data of candidateList">
+                <td>
+                    <div class="col-md tab-wrap">
+                        <div class="tab-content p-4" id="v-pills-tabContent" style="background-color: white;width: 1020px;margin-left: 290px;margin-top: 50px;">
+                            <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+                                <table style="border-color: transparent;" class="container">
+                                    <tr>
+                                        <div class="col-md-6" style="padding-top: 5px;">
+                                            <div class="team d-md-flex">
+                                                <td>
+                                                    <div class="img" style="background-image: url(assets/images/person_1.jpg);margin-left: -15px;">
+                                                    </div>
+                                                </td>
+                                                <!--div class="text pl-md-5">
+                                                    <span class="location mb-0"><label style="margin-left: -25px;">{{data.Location}}</label></span>
+
+                                                </div-->
+                                            </div>
+                                        </div>
+                                        <td>
+
+                                            <h5><label style="margin-left: -270px;">{{data.full_name}}</label></h5>
+
+                                            <h6>
+                                                <span class="position" style="background-color: #ffffb3;margin-left: -270px;">
+                                                    <label style="color: red;">{{data.education}}</label>
+                                                </span>
+                                            </h6>
+                                            <h6 class="text pl-md-5" style="color: gray;font-style: inherit;margin-left: -320px;">Contact :{{data.contact_no}}</h6>
+                                            <h6 class="text pl-md-5" style="color: gray;font-style: inherit;margin-left: -320px;">Email :{{data.email}}</h6>
+                                            <h6 class="text pl-md-5" style="color: black;font-style: inherit;margin-left: -320px;">Applied For:{{data.Title}}</h6>
+                                            <b class="icon-my_location text pl-md-5" style="color: black;font-style: initial;margin-left: -320px;">{{data.Location}}</b>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="{{showResume(data)}}">Resume</a>&nbsp;
+
+                                            <button *ngIf="data.Job_status=='R' || data.Job_status=='P'" (click)="approveApplication(data)" class="btn btn-success icon-check"></button>&nbsp;
+                                            <button *ngIf="data.Job_status=='A' || data.Job_status=='P'" (click)="rejectApplication(data)" class="btn btn-danger icon-close"></button>
+                                        </td>
+
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>

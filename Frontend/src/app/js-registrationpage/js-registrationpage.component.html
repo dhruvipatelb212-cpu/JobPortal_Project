@@ -1,0 +1,139 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background-color:white">
+    <div class="container">
+        <a class="navbar-brand icon-magnet" style="font-size:30px" href="index.html"> Megnify.Me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span>Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active"><a routerLink="" class="nav-link">Home</a></li>
+
+                <li class="nav-item active"><a routerLink="../BrowseJobs" class="nav-link">Jobs</a></li>
+                <li class="nav-item cta mr-md-1"><a routerLink="../login" class="nav-link">Login</a></li>
+                <li class="nav-item cta cta-colored"><a routerLink="../coReg" class="nav-link">Company Registration</a>
+                </li>&nbsp;
+                <li class="nav-item cta"><a routerLink="jsReg" class="nav-link">JobSeeker Registration</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('assets/LoginAssets/images/bg-011.png');">
+        <div class="wrap-reg100 p-l-55 p-r-55 p-t-37 p-b-54" style="margin-top: 70px; box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75); -webkit-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75); -moz-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);">
+
+            <span class="login100-form-title p-b-20" style="font-size: 23px">Sign Up
+            </span>
+
+
+            <div class="row col-md-12   ">
+                <div class="wrap-input100 col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <span class="label-input100">Full Name</span>
+                    <input type="text" [(ngModel)]="fullName" class="input100 pad" placeholder="Full Name">
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <span class="label-input100">Mobile</span>
+                    <input type="text" [(ngModel)]="contact" class="input100 pad" placeholder="Mobile">
+                    <span class="focus-input100"></span>
+                </div>
+
+
+            </div>
+            <div class="wrap-input100 validate-input ">
+                <span class="label-input100">Address</span>
+                <input type="text" [(ngModel)]="address" class="input100" placeholder="Type Your Address">
+
+                <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+
+            <div class="row col-md-12   ">
+                <div class="wrap-input100 col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <span class="label-input100">State</span>
+                    <select class="form-control" [(ngModel)]="stateId">
+                        <option value="0" selected="selected" disabled="disabled">--Select--</option>
+                        <option *ngFor="let data of StateList" value="{{data.StateId}}">
+                            {{data.StateName}}
+                        </option>
+
+                    </select>
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <span class="label-input100">City</span>
+                    <select class="form-control" [(ngModel)]="cityId">
+                        <option *ngFor="let city of CityList" value="{{city.CitytId}}">
+                            {{city.CityName}}
+                        </option>
+                    </select>
+                    <span class="focus-input100"></span>
+                </div>
+
+
+            </div>
+
+
+            <div class="row col-md-12 ">
+                <div class="wrap-input100 col-md-6 mr-0 mt-0 validate-input m-b-0 bri" style="border-bottom: none">
+                    <span class="label-input100">Your Highest Qualification</span>
+                    <select [(ngModel)]="education" class="form-control" id="edq" name="first-name" placeholder="First Name" required>
+                        <option value="0 " selected="selected" disabled="disabled">Select Qualification</option>
+                        <option value="S.S.C">S.S.C</option>
+                        <option value="H.S.C">H.S.C</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Post-Graduate">Post Graduate</option>
+                        <option value="P.H.D">P.H.D</option>
+                    </select>
+                </div>
+
+
+                <div class="wrap-input100  col-md-6 validate-input ble" style="border-bottom: none">
+                    <span class="label-input100">Resume</span>
+                    <!--img [src]="FilePath" height="100px" width="100px" style="border-radius: 50%; border: 4px solid black; "-->&nbsp;
+                    <input type="file" (change)="uploadResume($event)" class="form-control">
+
+                </div>
+            </div>
+
+            <div class="row col-md-12">
+                <div class="wrap-input100 col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <span class="label-input100">UserName</span>
+                    <input type="text" [(ngModel)]="email" class="input100" placeholder="Type Your Username">
+
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+
+
+                <div class="wrap-input100  col-md-6 validate-input ble">
+                    <span class="label-input100">Password</span>
+                    <input type="password" [(ngModel)]="password" class="input100" placeholder="Type Your Password">
+
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="container-login100-form-btn">
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn">
+                    </div>
+                    <button (click)="registerJobSicker()" class="login100-form-btn">
+                        <a>SIGN IN</a>
+
+                    </button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

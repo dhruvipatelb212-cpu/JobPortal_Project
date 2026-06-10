@@ -1,0 +1,144 @@
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+
+                <a routerLink="/jobseeker" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                </a>
+
+
+                <li class="dropdown">
+                    <a routerLink="/jobseeker/SearchJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-briefcase"></span><span class="mtext">Search Jobs</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/jobseeker/ViewApplication" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">View Applications</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="/jobseeker/JsProfile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/jobseeker/JsFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-toggle no-arrow" (click)="remove()" style="color: white;">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-reg100 p-l-55 p-r-55 p-t-37 p-b-54" style="margin-left: 280px;
+        box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);-webkit-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);
+         -moz-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);">
+            <div class="login-100-form validate-form">
+                <span class="login-100-form-title p-b-20" style="font-size: 23px;margin-left: 280px;margin-top: 5px;
+                font-weight: bold;">My Profile</span>
+                <br/>
+                <div class="row col-md-12 " style="margin-top: 10px;">
+                    <div class="wrap-input100 col-md-1 validate-input ble " style="border-bottom: none ">
+
+                    </div>
+                    <div class="wrap-input100 col-md-4 validate-input ble " style="border-bottom: none;margin-bottom: 10px; ">
+                        <label class="font-weight-bold" style="margin-left: -54px;">Resume</label>
+                        <input type="file" (change)="uploadResume($event)" [(ngModel)]="resume" class="form-control" style="margin-left: -54px;width: 270px;">
+                        <a href={{resumeUrl}} class="font-weight-bold " style="margin-left: -50px; ">Your Resume</a>
+                    </div>
+                    <br>
+
+                    <div class="wrap-input100 col-md-6 mr-0 mt-0 validate-input m-b-0 bri " style="border-bottom: none ">
+                        <label class="font-weight-bold" style="margin-left: 54px;">Your Highest Qualification</label>
+                        <select [(ngModel)]="education" class="form-control " style="margin-left: 55px;">
+                            <option value="0 " selected="selected " disabled="disabled ">Select Qualification</option>
+                            <option value="S.S.C ">S.S.C</option>
+                            <option value="H.S.C ">H.S.C</option>
+                            <option value="Graduate ">Graduate</option>
+                            <option value="Post-Graduate ">Post Graduate</option>
+                            <option value="P.H.D ">P.H.D</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row col-md-12 " style="margin-top: 10px; ">
+                    <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                        <label class="font-weight-bold ">Full Name</label>
+                        <input [(ngModel)]="name" type="text " class="form-control " placeholder="Full Name " readonly>
+
+                    </div>
+
+                    <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                        <label class="font-weight-bold ">Mobile</label>
+                        <input type="text " [(ngModel)]="contact" class="form-control " placeholder="Mobile ">
+
+                    </div>
+                    <br/><br/><br/>
+                    <div class="row col-md-12 " style="margin-top: 10px; ">
+                        <div class="row col-md-10 ">
+
+                        </div>
+                    </div>
+                    <div class="row col-md-12 " style="margin-top: 10px; ">
+                        <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                            <label class="font-weight-bold " style="margin-left: 2px; ">State</label>
+                            <select [(ngModel)]="stateID" class="form-control" style="width: 280px;margin-left: 2px;">
+                                <option value="0" selected="selected" disabled="disabled">--Select--</option>
+                                <option *ngFor="let data of stateList" value="{{data.StateId}}">
+                                    {{data.StateName}}
+                                </option>
+                               
+                            </select>
+                        </div>
+                        <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                            <label class="font-weight-bold " style="margin-left: 24px; ">City</label>
+                            <select [(ngModel)]="cityId" class="form-control" style="width: 280px;margin-left: 15px;">
+                                <option value="0" selected="selected" disabled="disabled">--Select--</option>
+                                <option *ngFor="let data of cityList" value="{{data.CitytId}}">
+                                    {{data.CityName}}
+                                </option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="row col-md-12 " style="margin-top: 10px; ">
+                        <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                            <label class="font-weight-bold ">Username</label>
+                            <input type="text " [(ngModel)]="mail" class=" form-control " style="width: 280px;margin-left: 2px; " placeholder="Username " readonly>
+                        </div>
+                        <div class="col-md-6 bri ">
+                            <br/>
+                            <button (click)="updateUser()" class="btn btn-md btn-primary pull-right icon-edit ml-2 " style="margin-top: 15px;margin-left: -100px; "></button>
+                            <button (click)="changePass()" class="btn btn-md btn-danger" style="margin-top: 15px;margin-left: -2px;">Change Password</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

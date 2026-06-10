@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background-color:white">
+    <div class="container">
+        <a class="navbar-brand icon-magnet" style="font-size:30px" href="index.html">  Megnify.Me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span>Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active"><a routerLink="" class="nav-link">Home</a></li>
+
+                <li class="nav-item active"><a routerLink="../BrowseJobs" class="nav-link">Jobs</a></li>
+                <li class="nav-item cta mr-md-1"><a routerLink="Login" class="nav-link">Login</a></li>
+                <li class="nav-item cta cta-colored"><a routerLink="../coReg" class="nav-link">Company Registration</a></li>&nbsp;
+                <li class="nav-item cta"><a routerLink="../jsReg" class="nav-link">JobSeeker Registration</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('assets/LoginAssets/images/bg-011.png');">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-37 p-b-54" style="margin-top: -100px;margin-left: 70px; box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75); -webkit-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75); -moz-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);">
+
+            <span class="login100-form-title p-b-20">Login
+                </span>
+
+            <div class="wrap-input100 validate-input m-b-3">
+                <span class="label-input100">Username</span>
+                <input type="text" class="input100" [(ngModel)]="email" placeholder="Type Your Username">
+
+                <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100">Password</span>
+                <input type="password" [(ngModel)]="pass" class="input100" placeholder="Type Your Password">
+
+                <span class="focus-input100" data-symbol="&#xf190;"></span>
+            </div>
+
+            <br/>
+
+
+            <div class="container-login100-form-btn">
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn">
+                    </div>
+                    <button (click)="login()" class="login100-form-btn">
+                          Login
+                        </button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,186 @@
+<link rel="stylesheet" href="/../assets/skydash/css/vertical-layout-light/style.css">
+
+<!--skydash-->
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Skydash Admin</title>
+<!-- plugins:css -->
+<link rel="stylesheet" href="/../assets/skydash/vendors/feather/feather.css">
+<link rel="stylesheet" href="/../assets/skydash/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="/../assets/skydash/vendors/css/vendor.bundle.base.css">
+<!-- endinject -->
+<!-- Plugin css for this page -->
+<link rel="stylesheet" href="/../assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="/../assets/skydash/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" type="text/css" href="/../assets/skydash/js/select.dataTables.min.css">
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<!--link rel="stylesheet" href="assets/skydash/css/vertical-layout-light/style.css">
+    <endinject -->
+<link rel="shortcut icon" href="/../assets/skydash/images/favicon.png" />
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+
+                <a routerLink="company" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                </a>
+
+                <li class="dropdown">
+                    <a routerLink="/company/AddJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-briefcase"></span><span class="mtext">Add Job</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/company/ViewJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-rows"></span><span class="mtext">View Job</span>
+                    </a>
+
+                </li>
+
+
+                <li class="dropdown">
+                    <a routerLink="/company/Application" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">Application</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="CoProfile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/ViewJobseeker" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-users"></span><span class="mtext">View JobSeekers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/CoFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-toggle no-arrow" (click)="remove()" style="color: white;">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header" style="width: 1220px;margin-left: -20px;margin-top: -80px;height: 90px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h4 style="margin-left: 2px;">{{JOD}}</h4>
+                        </div>
+                        <div class="col-md-12" style="margin-left: 10px;">
+                            <label>
+                                <a style="font-size: 17px;">Home</a> 
+                                <label> &nbsp; > &nbsp; </label>
+                            <a routerLink="/company" style="font-size: 17px;">Dashboard</a>
+                            </label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="pd-ltr-20">
+        <div class="card-box pd-20 height-100-p mb-30" style="margin-left: 57px;width: 1220px;margin-top: -90px;">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="assets/deskapp/vendors/images/banner-img.png" alt="">
+                </div>
+                <div class="col-md-8">
+                    <h4 class="font-20 weight-500 mb-10 text-capitalize">
+                        Welcome {{cmpName}}!!
+                        <div class="weight-600 font-30 text-blue"></div>
+                    </h4>
+                    <p class="font-18 max-width-600">To help you find best employees for your company, we will provide you best employees recruitment process of our country.A healthy recruiting mix involves advertising in various places.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 grid-margin transparent">
+    <div class="row" style="margin-left: 340px;width: 1090px;">
+        <div class="col-md-4 mb-4 stretch-card transparent">
+            <div class="card card-light-blue">
+                <div class="card-body">
+                    <b><p class="mb-4" style="color:white;">No Of Jobs</p></b>
+                    <b> <p class="fs-30 mb-2" style="color: black;">{{jobsCount}}</p></b>
+                    <u><b><p style="color: black;"><a routerLink="/company/ViewJob" style="color: black;">View Jobs</a></p></b></u>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 stretch-card transparent">
+            <div class="card " style="background-color: #5cb85c;">
+                <div class="card-body">
+                    <b><p class="mb-4" style="color:white;">No Of Approved JobSeeker</p></b>
+                    <b><p class="fs-30 mb-2" style="color: black;">{{noOfAppl}}</p></b>
+                    <b> <p style="color: black;"><a routerLink="/company/ViewJobseeker" style="color: black;">View JobSeekers</a></p></b>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4 stretch-card transparent">
+            <div class="card card-light-danger">
+                <div class="card-body">
+                    <b> <p class="mb-4" style="color:white;">No Of Today's Application</p></b>
+                    <b><p class="fs-30 mb-2" style="color: black;">{{apps}}</p></b>
+                    <b> <p style="color: black;"><a routerLink="/company/Application" style="color: black;">View Application</a></p></b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--skydash-->
+<!-- plugins:js -->
+
+<script src="/../assets/skydash/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/../assets/skydash/vendors/chart.js/Chart.min.js"></script>
+<script src="/../assets/skydash/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="/../assets/skydash/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="/../assets/skydash/js/dataTables.select.min.js"></script>
+
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/../assets/skydash/js/off-canvas.js"></script>
+<script src="/../assets/skydash/js/hoverable-collapse.js"></script>
+<script src="/../assets/skydash/js/template.js"></script>
+<script src="/../assets/skydash/js/settings.js"></script>
+<script src="/../assets/skydash/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="/../assets/skydash/js/dashboard.js"></script>
+<script src="/../assets/skydash/js/Chart.roundedBarCharts.js"></script>

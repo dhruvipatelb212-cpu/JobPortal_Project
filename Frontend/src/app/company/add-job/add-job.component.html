@@ -1,0 +1,191 @@
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+
+                <a routerLink="/company" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                </a>
+
+                <li class="dropdown">
+                    <a routerLink="/company/AddJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-briefcase"></span><span class="mtext">Add Job</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/company/ViewJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-rows"></span><span class="mtext">View Job</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/company/Application" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">Application</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="/company/CoProfile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/ViewJobseeker" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-users"></span><span class="mtext">View JobSeekers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/CoFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-toggle no-arrow" (click)="remove()" style="color: white;">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="overlay"></div>
+<div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-start">
+
+
+        <h1 class="mb-3 bread" style="margin-left: 530px;">Post A Job</h1>
+        <hr style="border: solid black;border-bottom: black;width: 100%;margin-left: 160px;" />
+
+    </div>
+</div>
+
+<div class="">
+    <div class="container">
+        <div>
+            <div class="col-md-12 col-lg-8 mb-5" style="margin-left: 140px;">
+
+                <div class="row form-group">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+
+
+                                        <label class="font-weight-bold">Job Title</label>
+                                        <input type="text" [(ngModel)]="jtitle" class="form-control" style="width: 500px;;" placeholder="eg. Professional UI/UX Designer">
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+
+                                        <label class="font-weight-bold">Job Type</label>
+                                        <select [(ngModel)]="jobType" class="form-control" style="width: 500px;">
+                                                <option value="0 " selected="selected" disabled="disabled">Select
+                                                    JobType</option>
+                                                <option value="Full Time">Full Time</option>
+                                                <option value="Part Time">Part Time</option>
+                                                <option value="Internship">Internship</option>
+                                            </select>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Field Type</label>
+                                        <input [(ngModel)]="fieldType" type="text" class="form-control" style="width: 500px;;" placeholder="eg. IT/CIVIL">
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Location</label>
+                                        <!--input type="text" [(ngModel)]="location" class="form-control" style="width: 500px;;" placeholder="eg. Surat"-->
+                                        <select class="form-control" style="width: 500px;" [(ngModel)]="location">
+                                            <option  *ngFor="let data of allCity" value="{{data.CityName}}">
+                                                {{data.CityName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Job Description</label>
+                                        <input type="text" [(ngModel)]="descJob" class="form-control" style="width: 500px;;" placeholder="eg. Add Detail About Your Job ">
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Experience</label>
+                                        <input type="text" [(ngModel)]="experience" class="form-control" style="width: 500px;;" placeholder="eg. Experience In Year ">
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Salary Range</label>
+                                        <input type="text" [(ngModel)]="salaryRange" class="form-control" style="width: 500px;;" placeholder="Approx Salary ">
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Vacancy</label>
+                                        <input type="number" [(ngModel)]="vacancy" class="form-control" style="width: 500px;;" placeholder="eg. Experience In Year ">
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <div class="col-md-12">
+                            <input type="button" (click)="addjob()" value="CREATE JOB" class="btn btn-primary py-2 px-5">
+                        </div>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+                <li>
+                    <a routerLink="/admin" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/admin/ViewCompanies" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">Companies</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/admin/ViewJS" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-users"></span><span class="mtext">JobSeekers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/admin/Profile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Change Password</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a routerLink="/admin/ViewFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a class="dropdown-toggle no-arrow" style="color: white;" (click)="remove()">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-reg100 p-l-55 p-r-55 p-t-37 p-b-54" style="margin-left: 280px;
+        box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);-webkit-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);
+         -moz-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);">
+            <div class="login-100-form validate-form">
+                <span class="login-100-form-title p-b-20" style="font-size: 23px;margin-left: 245px;margin-top: 5px;
+                font-weight: bold;">Change Password</span>
+                <br/>
+
+                <div class="row col-md-12" style="margin-top: 10px;">
+
+                    <div class="row col-md-12" style="margin-top: 10px;">
+                        <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                            <label class="font-weight-bold">Username</label>
+                            <input aria-readonly="true" type="text" class="form-control" style="width: 280px;margin-left: 2px;" placeholder="Username" value="admin@gmail.com" readonly>
+                        </div>
+
+                    </div>
+                    <div class="row col-md-12" style="margin-top: 10px;">
+                        <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                            <label class="font-weight-bold">Old Password</label>
+                            <input aria-readonly="true" type="Password" class="form-control" style="width: 280px;margin-left: 2px;" [(ngModel)]="oldPass" placeholder="Old Password">
+                        </div>
+                        <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                            <label class="font-weight-bold">New Password</label>
+                            <input aria-readonly="true" type="Password" class="form-control" style="width: 280px;margin-left: 2px;" [(ngModel)]="newPass" placeholder="New Password">
+                        </div>
+                        <div class="col-md-8 bri">
+                            <br/>
+                            <button class="btn btn-md btn-primary pull-right  ml-2" style="margin-top: 15px;margin-left: 790px;" (click)="changePAss()">Change Pasword</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

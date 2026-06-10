@@ -1,0 +1,119 @@
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+
+                <a routerLink="/jobseeker" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                </a>
+
+
+                <li class="dropdown">
+                    <a routerLink="/jobseeker/SearchJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-briefcase"></span><span class="mtext">Search Jobs</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/jobseeker/ViewApplication" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">View Applications</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="/jobseeker/JsProfile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/jobseeker/JsFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-toggle no-arrow" style="color: white;" (click)="remove()">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12 row bg-light">
+    <b><label class="form-control-plaintext" style="font-size: 20px;margin-left: 290px;margin-top: 50px;">Status :&nbsp;&nbsp; </label></b>
+    <select [(ngModel)]="search" class="form-control col-md-3 mr-2" style="margin-top: 50px;" name="ap">
+        
+        <option value="A" >Application Approved</option>
+        <option value="P">Application Pending</option>
+        <option value="R">Application Rejected</option>
+    </select>
+    <button type="submit" (click)="viewAllCmp()" style="margin-top: 50px;" class="micon dw dw-search btn btn-primary"></button>
+</div>
+<div class="card-box" style="margin-top: 5px;">
+
+
+    <table style="width: 1160px;margin-left: 320px;" class="data-table table hover multiple-select-row nowrap">
+        <thead>
+            <tr>
+                <th>Company Logo</th>
+                <th>Company Name</th>
+
+                <th>Job Title</th>
+                <th>Job Type</th>
+
+                <th>Email</th>
+                <th>Contact</th>
+
+                <th>Salary Range</th>
+                <hr style="border-style: 2px solid black;" />
+            </tr>
+        </thead>
+        <tr *ngFor="let data of allCmpsJsSide">
+
+            <td>
+                <img [src]='viewLogo(data)' height="130px" width="130px " style="border-radius: 50%; border: 4px solid black;">&nbsp;
+            </td>
+            <td>
+
+                <h5><label>{{data.full_name}}</label></h5>
+            </td>
+
+            <td>
+                <h5><label>{{data.Title}}</label></h5>
+
+            </td>
+            <td>
+
+                <h6><span class="position" style="background-color: #ffffb3;"><label style="color: red;">{{data.Job_type}}</label></span></h6>
+            </td>
+
+            <td>
+                <label>{{data.email}}</label>
+            </td>
+            <td>
+                <label>{{data.contact_no}}</label>
+            </td>
+            <td>
+                <label>{{data.Salary_range}}</label>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>

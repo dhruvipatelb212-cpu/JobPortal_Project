@@ -1,0 +1,126 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background-color:white">
+    <div class="container">
+        <a class="navbar-brand icon-magnet" style="font-size:30px" href="index.html"> Megnify.Me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span>Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active"><a routerLink="" class="nav-link">Home</a></li>
+
+                <li class="nav-item active"><a routerLink="../BrowseJobs" class="nav-link">Jobs</a></li>
+                <li class="nav-item cta mr-md-1"><a routerLink="../login" class="nav-link">Login</a></li>
+                <li class="nav-item cta cta-colored"><a routerLink="coReg" class="nav-link">Company Registration</a>
+                </li>&nbsp;
+                <li class="nav-item cta"><a routerLink="../jsReg" class="nav-link">JobSeeker Registration</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('assets/LoginAssets/images/bg-011.png');">
+        <div class="wrap-reg100 p-l-55 p-r-55 p-t-37 p-b-54" style="margin-top: 70px; box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75); -webkit-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75); -moz-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);">
+            <span class="login100-form-title p-b-20" style="font-size: 23px">Sign Up
+            </span>
+
+
+            <div class="row col-md-12">
+                <div class=" col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <span class="font-weight-bold">Company Name</span>
+                    <input type="text" class="form-control" placeholder=" Company Name " [(ngModel)]="CmpName">
+
+                </div>
+
+                <div class=" col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                    <span class="font-weight-bold">Mobile</span>
+                    <input type="text " [(ngModel)]="contact" class="form-control" placeholder="Mobile ">
+
+                </div>
+
+
+            </div><br />
+            <div class="row col-md-10" style="width: 100%;margin-left: 20px;">
+                <span class="font-weight-bold">Address</span>
+                <input type="text" [(ngModel)]="address" class="form-control" placeholder="Type Your Address ">
+
+
+            </div>
+            <br />
+            <div class="row col-md-12">
+                <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                    <span class="font-weight-bold">State</span>
+                    <select class="form-control" [(ngModel)]="stateId">
+                        <option value="0" selected="selected" disabled="disabled">--Select--</option>
+                        <option *ngFor="let data of StateList" value="{{data.StateId}}">
+                            {{data.StateName}}
+                        </option>
+                        
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                    <span class="font-weight-bold">City</span>
+                    <select class="form-control" [(ngModel)]="cityId">
+                        <option *ngFor="let city of CityList" value="{{city.CitytId}}">
+                            {{city.CityName}}
+                        </option>
+                    </select>
+
+                </div>
+
+
+            </div>
+
+            <br />
+            <div class="row col-md-12 ">
+                <div class="wrap-input100 col-md-1 validate-input ble " style="border-bottom: none ">
+
+                </div>
+                <div class="wrap-input100 col-md-4 validate-input ble " style="border-bottom: none ">
+                    <span class="font-weight-bold">Company Logo</span><br>
+                    <img [src]="PhotoFilePath" height="100px" width="100px" style="border-radius: 50%; border: 4px solid black; ">&nbsp;
+
+                </div>
+                <br>
+                <div class="wrap-input100 col-md-6 validate-input ble " style="border-bottom: none ">
+                    <br><br>
+                    <input type="file" (change)="uploadPhoto($event)" class="form-control ">
+
+                </div>
+            </div>
+            <br />
+            <div class="row col-md-12 ">
+                <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri ">
+                    <span class="font-weight-bold">UserName</span>
+                    <input type="text " [(ngModel)]="email" class="form-control" placeholder=" Type Your Username ">
+
+
+                </div>
+
+
+                <div class="col-md-6 validate-input ble ">
+                    <span class="font-weight-bold">Password</span>
+                    <input type="password" [(ngModel)]="password" class="form-control" placeholder="Type Your Password ">
+
+
+                </div>
+            </div>
+            <br />
+            <div class="container-login100-form-btn ">
+                <div class="wrap-login100-form-btn ">
+                    <div class="login100-form-bgbtn ">
+                    </div>
+                    <button (click)="registerCmp()" class="login100-form-btn ">
+                        <a>SIGN IN</a>
+
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

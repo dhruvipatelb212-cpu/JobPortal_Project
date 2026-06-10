@@ -1,0 +1,80 @@
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+
+                <a routerLink="/jobseeker" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                </a>
+
+
+                <li class="dropdown">
+                    <a routerLink="/jobseeker/SearchJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-briefcase"></span><span class="mtext">Search Jobs</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/jobseeker/ViewApplication" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">View Applications</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="/jobseeker/JsProfile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Profile</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a routerLink="/jobseeker/JsFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a (click)="remove()" class="dropdown-toggle no-arrow" style="color: white;">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="limiter">
+    <div class="container-login100" style="width: 500px;margin-left: 630px;margin-top: -50px;">
+        <div class="wrap-reg100 p-l-55 p-r-55 p-t-37 p-b-54" style="
+        box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);-webkit-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);
+         -moz-box-shadow: 0px 0px 11px 4px rgba(49,49,49,0.75);">
+            <div class="login-100-form validate-form">
+                <span class="login-100-form-title" style="font-size: 23px;margin-left: 70px;margin-top: 5px;
+                font-weight: bold;">Change Password</span>
+                <br/><br/>
+                <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <label class="font-weight-bold">Old Password</label>
+                    <input [(ngModel)]="oldPass" type="password" class="form-control" style="width: 300px;" placeholder="Old Password">
+                </div><br/>
+                <div class="col-md-6 mr-0 mt-0 validate-input m-b-0 bri">
+                    <label class="font-weight-bold">New Password</label>
+                    <input [(ngModel)]="newPass" type="password" class="form-control" style="width: 300px;" placeholder="New Password">
+                </div>
+
+                <br/>
+                <button (click)="changePass()" class="btn btn-md btn-primary" style="margin-top: 15px;width: 200px;margin-left: 70px;">Change Password</button>
+
+            </div>
+        </div>
+    </div>
+</div>

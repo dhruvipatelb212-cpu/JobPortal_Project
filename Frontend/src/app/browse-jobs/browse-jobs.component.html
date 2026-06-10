@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background-color:white">
+    <div class="container">
+        <a class="navbar-brand icon-magnet" style="font-size:30px" href="index.html"> Megnify.Me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span>Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active"><a routerLink="" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a routerLink="../BrowseJobs" class="nav-link">Jobs</a></li>
+                <li class="nav-item cta mr-md-1"><a routerLink="../login" class="nav-link">Login</a></li>
+                <li class="nav-item cta cta-colored"><a routerLink="../coReg" class="nav-link">Company Registration</a></li>&nbsp;
+                <li class="nav-item cta"><a routerLink="../jsReg" class="nav-link">JobSeeker Registration</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row justify-content-center pb-3">
+                    <div class="col-md-12 heading-section" style="margin-left: 180px;margin-top: -60px;">
+                        <span class="subheading">Recently Added Jobs</span>
+                        <h2 class="mb-4">Hot Jobs</h2>
+                        <hr style="border:2px solid black;" />
+                    </div>
+                </div>
+                <div class="row">
+
+
+                    <table *ngFor="let data of allJobs" style="border-color: transparent;border-width: 0px;width: 100%;">
+                        <div class="col-md-12" style="margin-left: 90px;">
+                            <div class="job-post-item py-4 d-block d-lg-flex align-items-center">
+
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h2 class="mr-3 text-black">
+                                                <label style="width: 600px;">{{data.Title}}</label>
+                                            </h2>
+                                            <div class="mr-3">
+                                                {{data.Field_type}} : <label style="color:red; ">{{data.Desc_job}}</label><br/>
+                                                <label style="color: limegreen;">Experience : {{data.Experience}}</label>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="one-forth ml-auto d-flex align-items-center">
+                                                <div style="margin-left: 80px;">
+                                                    <a class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
+                                                        <span class="icon-heart"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="badge-wrap" style="margin-left: -410px;">
+                                                <span class="bg-warning text-white badge py-2 px-3">
+                                                    <label>{{data.Job_type}}</label>
+                                                </span>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="mr-3">
+                                                <span class="icon-layers "></span>
+
+                                                <label style="color: blue; ">{{data.full_name}}</label>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="mr-3">
+                                                <span class="icon-my_location" style="margin-left: -350px;"></span>
+                                                <label>{{data.Location}}</label>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div>
+                                                <span class="icon-account_balance_wallet" style="margin-left: -630px;"></span>
+                                                <label style="width: 400px;">{{data.Salary_range}}</label>
+                                            </div>
+                                        </td>
+
+
+
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

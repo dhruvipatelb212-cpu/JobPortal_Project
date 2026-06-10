@@ -1,0 +1,138 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .rate {
+        float: none;
+        height: 96px;
+        padding: 0 10px;
+    }
+    
+    .rate:not(:checked)>input {
+        position: absolute;
+        top: -9999px;
+    }
+    
+    .rate:not(:checked)>label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 70px;
+        color: #ccc;
+    }
+    
+    .rate:not(:checked)>label:before {
+        content: '★ ';
+    }
+    
+    .rate>input:checked~label {
+        color: #ffc700;
+    }
+    
+    .rate:not(:checked)>label:hover,
+    .rate:not(:checked)>label:hover~label {
+        color: #deb217;
+    }
+    
+    .rate>input:checked+label:hover,
+    .rate>input:checked+label:hover~label,
+    .rate>input:checked~label:hover,
+    .rate>input:checked~label:hover~label,
+    .rate>label:hover~input:checked~label {
+        color: #c59b08;
+    }
+    /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+</style>
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="index.html">
+            <img src="assets/deskapp/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+            <img src="assets/deskapp/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+
+                <a routerLink="/company" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                </a>
+
+
+                <li class="dropdown">
+                    <a routerLink="/company/AddJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-briefcase"></span><span class="mtext">Add Job</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/company/ViewJob" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-rows"></span><span class="mtext">View Job</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a routerLink="/company/Application" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">Application</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="/company/CoProfile" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-user"></span><span class="mtext">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/ViewJobseeker" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-users"></span><span class="mtext">View JobSeekers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a routerLink="/company/CoFeedback" class="dropdown-toggle no-arrow">
+                        <span class="micon fa fa-star"></span><span class="mtext">Feedback</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a (click)="remove()" class="dropdown-toggle no-arrow" style="color: white;">
+                        <span class="micon dw dw-logout1"></span><span class="mtext">Logout</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h1 style="margin-left:  625px;margin-top: 170px;">Help us to Serve You Better !!</h1>
+
+<div class="card p-3 mb-5 bg-white rounded" style="width: 30%;margin-top:50px;margin-left: 690px; box-shadow: 0px 0px 10px #707070">
+    <h3 style="margin-left: 150px;">Rate Us</h3>
+    <div class="rate card-body">
+        <input type="radio" id="star5" value="5" (click)="rate(5)">
+        <label for="star5">5 Star</label>
+        <input type="radio" id="star4" value="4" (click)="rate(4)">
+        <label for="star4">4 Star</label>
+        <input type="radio" id="star3" value="3" (click)="rate(3)">
+        <label for="star3">3 Star</label>
+        <input type="radio" id="star2" value="2" (click)="rate(2)">
+        <label for="star2">2 Star</label>
+        <input type="radio" id="star1" value="1" (click)="rate(1)">
+        <label for="star1">1 Star</label>
+
+
+    </div><br/>
+
+    <button (click)="onSubmit()" class="btn btn-md btn-primary pull-right" style="margin-top: 15px;margin-left: 135px;width: 150px;">Submit</button>
+</div>
