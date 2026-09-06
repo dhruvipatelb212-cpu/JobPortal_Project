@@ -1,4 +1,4 @@
-# ICT Job Portal
+# Job Portal
 
 A full-stack job portal application for managing job listings, user accounts, applications, and feedback for three roles: Admin, Company, and Job Seeker.
 
