@@ -127,10 +127,6 @@ The application is designed around the following user roles:
 - The project appears to be a student/academic project and may require environment-specific configuration for local database and hosting.
 - Some paths and database server names in configuration files are machine-specific and may need adjustment for your environment.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Author / Maintenance
 
 This repository is intended for educational and project-development use. If you are publishing or extending it, update the author and project ownership details as needed.
